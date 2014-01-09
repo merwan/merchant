@@ -28,4 +28,8 @@
       <td><%= print_price(item.subtotal) %></td>
     </tr>
   <% end %>
+  <tr>
+    <th>Order Total</th>
+    <td><%= print_price(@order.total) %></td>
+  </tr>
 </table>
