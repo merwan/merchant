@@ -44,8 +44,11 @@
         <%= link_to 'Add new address', new_address_path %>
       </td>
     </tr>
+    <tr>
+      <td><%= f.submit 'Submit Order' %></td>
+    </tr>
   </table>
 <% end %>
 <p>
-  <%= link_to 'Empty Cart', @order, data: { confirm: 'Are you sure?' }, method: :delete %>
+<%= link_to 'Empty Cart', @order, data: { confirm: 'Are you sure?' }, method: :delete %>
 </p>
