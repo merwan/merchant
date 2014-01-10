@@ -14,7 +14,7 @@ class AddressesController < ApplicationController
 
   # GET /addresses/new
   def new
-    @address = Address.new
+    @address = current_user.addresses.new
   end
 
   # GET /addresses/1/edit
@@ -28,7 +28,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
+        format.html { redirect_to current_user.orders.last, notice: 'Address was successfully created.' }
         format.json { render action: 'show', status: :created, location: @address }
       else
         format.html { render action: 'new' }
